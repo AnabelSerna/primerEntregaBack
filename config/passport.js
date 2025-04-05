@@ -27,6 +27,7 @@ passport.use(new LocalStrategy({
   }
 }));
 
+
 passport.use(new JwtStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: JWT_SECRET
@@ -42,6 +43,7 @@ passport.use(new JwtStrategy({
     return done(err);
   }
 }));
+
 
 passport.serializeUser((user, done) => {
   done(null, user.id);

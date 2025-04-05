@@ -6,7 +6,6 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import passport from 'passport';
 import apiUserRoute from './routes/api.users.js';
-import userRoute from './routes/users.js';
 import sessionRoute from './routes/sessions.js';
 import __dirname from "./dirname.js";
 import './config/passport.js';
@@ -36,7 +35,6 @@ mongoose
   .then(() => console.log("Conectado a MongoDB"))
   .catch((err) => console.error("Error al conectar a MongoDB:", err));
 
-app.use("/users", userRoute);
 app.use("/api/users", apiUserRoute);
 app.use("/api/sessions", sessionRoute);
 
